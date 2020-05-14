@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const app = express()
 const port = 3000
 
-mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost/restaurant-list', { useNewUrlParser: true, useUnifiedTopology: true })
 const db = mongoose.connection
 db.on('error', () => {
   console.log('mongodb error!')
@@ -20,12 +20,12 @@ app.set('view engine', 'handlebars')
 
 app.use(express.static('public'))
 
-app.use(bodyParser.urlencoded({ extended: true}))
+app.use(bodyParser.urlencoded({ extended: true }))
 
 app.get('/', (req, res) => {
   Restaurant.find()
     .lean()
-    .then( restaurants => res.render('index', { restaurants }))
+    .then(restaurants => res.render('index', { restaurants }))
     .catch(error => console.log(error))
 })
 
@@ -35,7 +35,7 @@ app.get('/restaurants/new', (req, res) => {
 })
 
 //取得表單資訊並新增
-app.post('/restaurants',(req, res) => {
+app.post('/restaurants', (req, res) => {
   const name = req.body.name
   const name_en = req.body.name_en
   const category = req.body.category
@@ -45,14 +45,19 @@ app.post('/restaurants',(req, res) => {
   const google_map = req.body.google_map
   const rating = req.body.rating
   const description = req.body.description
-  return  Restaurant.create({ name, name_en , category, image, location, phone, google_map, rating, description })
+  return Restaurant.create({ name, name_en, category, image, location, phone, google_map, rating, description })
     .then(() => res.redirect('/'))
     .catch(error => console.log(error))
 })
-// app.get('/restaurants/:restaurant_id', (req, res) => {
-//   const restaurant = restaurantList.results.find(restaurant => restaurant.id.toString() === req.params.restaurant_id)
-//   res.render('show', { restaurant: restaurant })
-// })
+
+//讀取餐廳詳細資訊
+app.get('/restaurants/:restaurant_id', (req, res) => {
+  const id = req.params.restaurant_id
+  return Restaurant.findById(id)
+    .lean()
+    .then((restaurant) => res.render('show', { restaurant }))
+    .catch(error => console.log(error))
+})
 
 // app.get('/search', (req, res) => {
 //   const keyword = req.query.keyword
