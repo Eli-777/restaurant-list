@@ -44,4 +44,3 @@ npm start
 ![Alt text](/public/pictures/create_Restaurant_list.png)
 
 
-
