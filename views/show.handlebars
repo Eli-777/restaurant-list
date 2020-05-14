@@ -41,6 +41,12 @@
       <img class="rounded mx-auto d-block mb-4 w-100"
         src="{{restaurant.image}}" alt="{{restaurant.name}}"
         style="max-width: 600px;">
+
+      <form action="/restaurants/{{restaurant._id}}/delete" method="post" style="display: inline;">
+        <button type="submit" style="border: none; margin: 0 -0.3rem; background: transparent; cursor: pointer">
+          <i class="far fa-trash-alt  fa-2x"></i>
+        </button>
+      </form>
     </div>
   </div>
 </div>
