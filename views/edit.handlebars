@@ -1,0 +1,59 @@
+<div class="container h-200 mt-5">
+  <form action="/restaurants/{{ restaurant._id}}/edit" method="post">
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳中文名稱</span>
+      </div>
+      <input type="text" class="form-control" placeholder="name in chinese" name="name" value="{{ restaurant.name }}" aria-describedby="basic-addon1">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳英文名稱</span>
+      </div>
+      <input type="text" class="form-control" placeholder="name in English" name="name_en" value="{{ restaurant.name_en }}" aria-describedby="basic-addon2">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳類型</span>
+      </div>
+      <input type="text" class="form-control" placeholder="category" name="category" value="{{ restaurant.category }}" aria-describedby="basic-addon3">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳圖片網址</span>
+      </div>
+      <input type="text" class="form-control" placeholder="image" name="image" value="{{ restaurant.image }}" aria-describedby="basic-addon４">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳地址</span>
+      </div>
+      <input type="text" class="form-control" placeholder="location" name="location" value="{{ restaurant.location }}" aria-describedby="basic-addon5">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳電話</span>
+      </div>
+      <input type="text" class="form-control" placeholder="phone" name="phone" value="{{ restaurant.phone }}" aria-describedby="basic-addon6">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳goole_map</span>
+      </div>
+      <input type="text" class="form-control" placeholder="google_map" name="google_map" value="{{ restaurant.google_map }}" aria-describedby="basic-addon7">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳評分</span>
+      </div>
+      <input type="text" class="form-control" placeholder="rating" name="rating" value="{{ restaurant.rating }}" aria-describedby="basic-addon8">
+    </div>
+    <div class="input-group mb-3 ">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">餐廳描述</span>
+      </div>
+      <input type="text" class="form-control" placeholder="description" name="description" value="{{ restaurant.description }}" aria-describedby="basic-addon9">
+    </div>
+    <button type="submit" class="btn btn-info mb-5">儲存</button>
+  </form>
+</div>
