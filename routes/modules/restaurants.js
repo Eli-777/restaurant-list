@@ -62,13 +62,5 @@ router.delete('/:restaurant_id/', (req, res) => {
     .catch(error => console.log(error))
 })
 
-//搜尋功能
-// app.get('/search', (req, res) => {
-//   const keyword = req.query.keyword
-//   const restaurants = restaurantList.results.filter((restaurant) => {
-//     return restaurant.name.toLocaleLowerCase().includes(keyword.toLowerCase()) || restaurant.category.includes(keyword)
-//   })
-//   res.render("index", { restaurants: restaurants, keyword: keyword })
-// })
 
 module.exports = router
