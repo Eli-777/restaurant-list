@@ -40,7 +40,7 @@ npm start
 - body-parser: 1.19.0
 - mongoDB Community Server: 4.2.6
 - mongoose: 5.9.13
-- method-override": 3.0.0
+- method-override: 3.0.0
 
 ## 專案畫面
 ![Alt text](/public/pictures/index_Restaurant_list2.jpg)
