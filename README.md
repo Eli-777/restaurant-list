@@ -30,6 +30,8 @@ npm start
 - 使用者可以新增餐廳。
 - 使用者可以修改餐廳的資訊。
 - 使用者可以刪除餐廳。
+- 使用者可以搜尋餐廳。
+- 使用者可以對餐廳做排序。
 
 ## 使用工具
 - Node.js v12.16.2 -執行環境
@@ -38,6 +40,7 @@ npm start
 - body-parser: 1.19.0
 - mongoDB Community Server: 4.2.6
 - mongoose: 5.9.13
+- method-override": ^3.0.0
 
 ## 專案畫面
 ![Alt text](/public/pictures/index_Restaurant_list.jpg)
