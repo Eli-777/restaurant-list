@@ -10,6 +10,19 @@
           <div class="input-group-append">
             <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
           </div>
+          {{!-- dropdown --}}
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle ml-4" type="button" id="dropdownMenuButton"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              排序方式
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=asc&&target=name">A -> Z</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=desc&&target=name">Z -> A</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=asc&&target=category">類別</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=asc&&target=location">地區</a>
+            </div>
+          </div>
         </div>
       </form>
     </div>
@@ -18,42 +31,38 @@
 
 <!-- restaurant list -->
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-md-10 col-12 mx-auto">
-      <div class="card-columns">
-        {{#each restaurants}}
-        <a href="/restaurants/{{this._id}}" class="text-secondary">
-          <div class="card mb-3">
-            <img class="card-img-top" src="{{this.image}}"
-              alt="{{this.name}}">
-            <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{this.name}}</h6>
+  <div class="row col-11 mx-auto">
+    {{#each restaurants}}
+    <div class="col-md-4 col-sm-6 col-xs-1 py-1 px-3">
+      <a href="/restaurants/{{this._id}}" class="text-secondary">
+        <div class="card mb-3">
+          <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+          <div class="card-body p-3">
+            <h6 class="card-title mb-1">{{this.name}}</h6>
 
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2 fa-2x"></i> {{this.category}}
-              </div>
-
-              <span class="badge badge-pill badge-danger font-weight-normal">
-                {{this.rating}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-              <a href="/restaurants/{{ this._id }}">
-                <i class="fas fa-info-circle ml-2"></i>
-              </a>
-              <a href="/restaurants/{{ this._id }}/edit">
-                <i class="fas fa-edit ml-2"></i>
-              </a>
-              <form action="/restaurants/{{this._id}}?_method=DELETE" method="post" style="display: inline;">
-                <button type="submit"  style="border: none; margin: 0 -0.3rem; background: transparent; cursor: pointer">
-                  <i class="far fa-trash-alt ml-1"></i>
-                </button>
-              </form>
-
+            <div class="restaurant-category mb-1">
+              <i class="fas fa-utensils pr-2 fa-2x"></i> {{this.category}}
             </div>
+
+            <span class="badge badge-pill badge-danger font-weight-normal">
+              {{this.rating}}
+              <i class="fas fa-star fa-xs"></i>
+            </span>
+            <a href="/restaurants/{{ this._id }}">
+              <i class="fas fa-info-circle ml-2"></i>
+            </a>
+            <a href="/restaurants/{{ this._id }}/edit">
+              <i class="fas fa-edit ml-2"></i>
+            </a>
+            <form action="/restaurants/{{this._id}}?_method=DELETE" method="post" style="display: inline;">
+              <button type="submit" style="border: none; margin: 0 -0.3rem; background: transparent; cursor: pointer">
+                <i class="far fa-trash-alt ml-1"></i>
+              </button>
+            </form>
           </div>
-        </a>
-        {{/each}}
-      </div>
+        </div>
+      </a>
     </div>
+    {{/each}}
   </div>
 </div>
