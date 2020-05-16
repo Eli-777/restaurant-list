@@ -17,10 +17,10 @@
               排序方式
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=asc&&target=name">A -> Z</a>
-              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=desc&&target=name">Z -> A</a>
-              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=asc&&target=category">類別</a>
-              <a class="dropdown-item" href="/search/?keyword={{keyword}}&&order=asc&&target=location">地區</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&order=asc&target=name">A -> Z</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&order=desc&target=name">Z -> A</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&order=asc&target=category">類別</a>
+              <a class="dropdown-item" href="/search/?keyword={{keyword}}&order=asc&target=location">地區</a>
             </div>
           </div>
         </div>
@@ -28,6 +28,17 @@
     </div>
   </div>
 </div>
+
+
+<!--if search empty will show -->
+{{#if nothing}}
+  <div class="container mt-5">
+    <div class="text-center">
+      <h1>Oh！ No！ 沒找到你要的餐廳！！</h1>
+    </div>
+  </div>
+{{/if}}
+
 
 <!-- restaurant list -->
 <div class="container mt-5">

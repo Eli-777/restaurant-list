@@ -43,7 +43,7 @@ npm start
 - method-override": ^3.0.0
 
 ## 專案畫面
-![Alt text](/public/pictures/index_Restaurant_list.jpg)
+![Alt text](/public/pictures/index_Restaurant_list2.jpg)
 ![Alt text](/public/pictures/create_Restaurant_list.png)
 
 
